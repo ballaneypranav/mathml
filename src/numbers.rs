@@ -3,7 +3,7 @@ use roxmltree::Node;
 use serde_derive::{Deserialize, Serialize};
 use std::collections::{HashMap, HashSet};
 use std::num::{ParseFloatError, ParseIntError};
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 #[serde(rename_all = "kebab-case")]
 pub enum NumType {
     Real(f64),

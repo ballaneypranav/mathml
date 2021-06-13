@@ -9,7 +9,7 @@ use std::collections::HashMap;
 mod numbers;
 mod regexes;
 
-#[derive(Deserialize, Debug, Serialize, Eq, PartialEq)]
+#[derive(Deserialize, Debug, Serialize, Eq, PartialEq, Clone)]
 #[allow(non_camel_case_types)]
 pub enum BuiltinOp {
     factorial,
@@ -108,7 +108,7 @@ pub enum BuiltinOp {
     root,
 }
 
-#[derive(Debug, Serialize, Eq, PartialEq)]
+#[derive(Debug, Serialize, Eq, PartialEq, Deserialize, Clone)]
 pub enum MathNode {
     Apply(Vec<MathNode>),
     Op(BuiltinOp),
