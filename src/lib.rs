@@ -131,6 +131,12 @@ pub enum MathNode {
     PI(String, Option<String>),
 }
 
+impl Default for MathNode {
+    fn default() -> Self {
+        MathNode::Root(Vec::new())
+    }
+}
+
 fn has_text(math_node: &MathNode) -> bool {
     match math_node {
         MathNode::Text(e) if e.is_empty() => false,
